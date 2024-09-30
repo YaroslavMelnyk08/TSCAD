@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laba1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="subMain containerWeight">
+            <h1>Схема місць</h1>
+            <div class="weights">
+                <input id="weight1" type="number" class="weight-input" min="1" max="5" />
+                <input id="weight2" type="number" class="weight-input" min="1" max="5" />
+                <input id="weight3" type="number" class="weight-input" min="1" max="5" />
+                <input id="weight4" type="number" class="weight-input" min="1" max="5" />
+            </div>
+            <div class="places">
+                <input id="places1" type="number" class="number-input" min="1" max="5" />
+                <input id="places2" type="number" class="number-input" min="1" max="5" />
+                <input id="places3" type="number" class="number-input" min="1" max="5" />
+                <input id="places4" type="number" class="number-input" min="1" max="5" />
+                <input id="places5" type="number" class="number-input" min="1" max="5" />
+            </div>
+        </div>
+        <div class="subMain containerRelations">
+            <h1 class="titleRelations">Схема з'єднань</h1>
+            <div class="container-relations">
+                <div class="input-box">
+                    <input id="relation1" type="number" class="number-input" min="1" max="5" />
+                    <input id="relation" type="number" class="number-input relationNumber" min="1" max="5"/>
+                    <input id="relation2" type="number" class="number-input" min="1" max="5" />
+                    <button id="add-relation" class="add-relation">Додати з'єднання</button>
+                </div>
+                <ul id="relation-list"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="btnWrapper">
+        <button class="calculate">Провести обрахунки</button>
+        <button id="clear-data" class="clear-data">Очистити дані</button>
+    </div>
+    <div class="result-wrapper">
+        <div id="result"></div>
+        <div id="iterations"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
