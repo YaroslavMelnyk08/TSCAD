@@ -173,7 +173,7 @@ document.querySelector('.calculate').addEventListener('click', () => {
     resultDiv.innerHTML += `<p><strong>Нова схема місць:</strong> ${newState.join(', ')}</p>`;
     resultDiv.innerHTML += `<p><strong>Кпоч:</strong> ${k1}</p>`;
     resultDiv.innerHTML += `<p><strong>Ккін:</strong> ${k2}</p>`;
-    resultDiv.innerHTML += `<p><strong>E:</strong> ${Math.abs(Math.round(percent * 100) / 100)}% ${percent >= 0 ? 'increase' : 'decrease'}</p>`;
+    resultDiv.innerHTML += `<p><strong>E:</strong> ${Math.abs(Math.round(percent * 100) / 100)}%</p>`;
 
     // Display iteration logs
     const iterationsDiv = document.getElementById('iterations');

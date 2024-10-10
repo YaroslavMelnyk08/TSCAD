@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+input {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 15px;
+    width: 300px;
+    height:80px;
+    font-size: 24px;
+}
+
+table {
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.result-container p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.containerRelations {
+    margin: 20px 0;
+}
+
+.input-box {
+    display: flex;
+    gap: 10px;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 5px 0;
+}

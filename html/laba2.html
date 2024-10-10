@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обчислення Ккін</title>
+    <link rel="stylesheet" href="../css/styleLaba2.css">
+</head>
+<body>
+    <h1>Обчислення Ккін</h1>
+
+    <div class="input-container">
+        <h2>Введіть значення для матриці 4x5:</h2>
+        <table id="matrix">
+            <!-- Генерація форми матриці 4x5 -->
+        </table>
+        <h2>Значення заповнюються випадково</h2>
+        <table id="random-matrix">
+            <!-- Генерація форми матриці 4x5 -->
+        </table>
+
+        <h2>Введіть з'єднання:</h2>
+        <div class="subMain containerRelations">
+            <div class="container-relations">
+                <div class="input-box">
+                    <input id="relation1" type="number" class="number-input" min="1" max="12" placeholder="Елемент 1" />
+                    <input id="relation" type="number" class="number-input relationNumber" min="1" placeholder="Кількість з'єднань" />
+                    <input id="relation2" type="number" class="number-input" min="1" max="12" placeholder="Елемент 2" />
+                    <button id="add-relation" class="add-relation">Додати з'єднання</button>
+                </div>
+                <ul id="relation-list"></ul>
+            </div>
+        </div>
+
+        <button class="calculate-btn">Провести обрахунки</button>
+    </div>
+
+    <div class="result-container">
+        <h2>Результат:</h2>
+        <p id="result"></p>
+    </div>
+
+    <script src="../js/scriptLaba2.js"></script>
+</body>
+</html>
