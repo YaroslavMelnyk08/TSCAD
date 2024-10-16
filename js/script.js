@@ -9,15 +9,12 @@ Array.prototype.min = function() {
 let relations = [];
 
 function clearInputs() {
-    // Clear all weight and place inputs
     document.querySelectorAll('.weight-input').forEach(input => input.value = '');
     document.querySelectorAll('.number-input').forEach(input => input.value = '');
 
-    // Clear relations and relation list
     relations = [];
     document.getElementById('relation-list').innerHTML = '';
 
-    // Clear result and iterations
     document.getElementById('result').innerHTML = '';
     document.getElementById('iterations').innerHTML = '';
 }
@@ -139,12 +136,11 @@ document.querySelector('.calculate').addEventListener('click', () => {
 
     const matrix_D = buildMatrixD(weightElements, weights);
     const matrix_C = buildMatrixC(relations);
-    
-    // Capture the row-sum vectors before reorganization
+   
     const vector_D = buildVectorView(matrix_D);
     const vector_C = buildVectorView(matrix_C);
 
-    const { newState, iterationLogs } = processReorganization([...vector_D], [...vector_C], weightElements);  // Use spread operator to avoid modifying original vectors
+    const { newState, iterationLogs } = processReorganization([...vector_D], [...vector_C], weightElements);
     const processedMatrixD = buildMatrixD(newState, weights);
 
     const k1 = calculateQualityCriterion(matrix_C, matrix_D);
@@ -154,28 +150,23 @@ document.querySelector('.calculate').addEventListener('click', () => {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '<h3>Результат:</h3>';
 
-    // Display Matrix D
     resultDiv.innerHTML += '<p><strong>Матриця D:</strong></p>';
     resultDiv.appendChild(formatMatrixToTable(matrix_D));
 
-    // Display Matrix C
     resultDiv.innerHTML += '<p><strong>Матриця C:</strong></p>';
     resultDiv.appendChild(formatMatrixToTable(matrix_C));
 
-    // Display Row-Sum Vectors for Matrix D and C
     resultDiv.innerHTML += '<p><strong>D*:</strong></p>';
     resultDiv.appendChild(formatVectorToList(vector_D));
 
     resultDiv.innerHTML += '<p><strong>C*:</strong></p>';
     resultDiv.appendChild(formatVectorToList(vector_C));
 
-    // Display reorganization results
     resultDiv.innerHTML += `<p><strong>Нова схема місць:</strong> ${newState.join(', ')}</p>`;
     resultDiv.innerHTML += `<p><strong>Кпоч:</strong> ${k1}</p>`;
     resultDiv.innerHTML += `<p><strong>Ккін:</strong> ${k2}</p>`;
     resultDiv.innerHTML += `<p><strong>E:</strong> ${Math.abs(Math.round(percent * 100) / 100)}%</p>`;
 
-    // Display iteration logs
     const iterationsDiv = document.getElementById('iterations');
     iterationsDiv.innerHTML = '<h3>Ітерації:</h3>';
     iterationLogs.forEach(log => {
@@ -185,5 +176,4 @@ document.querySelector('.calculate').addEventListener('click', () => {
     });
 });
 
-// Event listener for clearing the data
 document.getElementById('clear-data').addEventListener('click', clearInputs);

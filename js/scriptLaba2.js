@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const randomMatrixTable = document.getElementById('random-matrix');
     const resultContainer = document.getElementById('result');
 
-    // Створення таблиці 4x5 для матриці
     for (let i = 0; i < 4; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < 5; j++) {
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let placedElements = [];
     const totalElements = 12;
 
-    // Додавання з'єднань
     document.getElementById('add-relation').addEventListener('click', () => {
         const element1 = parseInt(document.getElementById('relation1').value);
         const count = parseInt(document.getElementById('relation').value);
