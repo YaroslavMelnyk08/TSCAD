@@ -133,9 +133,9 @@ def calculate():
 def draw_karnaugh_map(truth_table):
     karnaugh_map = [[None for _ in range(4)] for _ in range(4)]
 
-    # Правильний порядок рядків та стовпців (Gray-код)
     row_order = [0, 1, 3, 2]  # Відповідає значенням (X1X2): 00, 01, 11, 10
     col_order = [0, 1, 3, 2]  # Відповідає значенням (X3X4): 00, 01, 11, 10
+
     for row in truth_table:
         x1, x2, x3, x4, y = row
         map_row = row_order[(x1 << 1) | x2]
@@ -143,8 +143,15 @@ def draw_karnaugh_map(truth_table):
         karnaugh_map[map_row][map_col] = y
 
     output_text.insert(tk.END, "\nКарта Карно:\n")
+    
+    output_text.insert(tk.END, "     " + " | ".join(f"{bin(col)[2:].zfill(2)}" for col in col_order) + "\n")
+    output_text.insert(tk.END, "   " + "-" * 20 + "\n")
+
     for i in range(4):
+        row_label = bin(row_order[i])[2:].zfill(2)
+        output_text.insert(tk.END, f"{row_label} | ")
         output_text.insert(tk.END, " | ".join(str(karnaugh_map[i][j] if karnaugh_map[i][j] is not None else '-') for j in range(4)) + "\n")
+
 
 # Кнопка для обчислення
 calc_button = tk.Button(root, text="Обчислити", command=calculate)
